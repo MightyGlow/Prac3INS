@@ -1,0 +1,19 @@
+def encrypt(text,s):
+  result=" "
+
+  #Traverse Text
+  for i in range(len(text)):
+    char=text[i]
+    #Encrypt Uppercase Characters
+    if(char.isupper()):
+      result += chr((ord(char)+ s-65)% 26+65)
+    #Encrypt Lowercase Characters
+    else:
+      result += chr((ord(char)+ s-97)% 26+97)
+  return result
+#Check the Above Function
+text=input("Enter the Text to Encrypt:")
+s=3
+print("Text:" + text)
+str(s)
+print("Cipher:" +encrypt(text,s))
